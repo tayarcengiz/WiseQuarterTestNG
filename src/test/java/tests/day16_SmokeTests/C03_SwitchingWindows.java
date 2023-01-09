@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
-public class C03_SwichingWindows {
+public class C03_SwitchingWindows {
     @Test
     public void test01(){
 

@@ -4,6 +4,7 @@ import Pages.QualitydemyPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import utilities.Driver;
+import utilities.ReusableMethods;
 
 public class C03_Pozıtıflogıntesti {
     @Test
@@ -19,6 +20,8 @@ public class C03_Pozıtıflogıntesti {
         // 4- Kullanici sifresi olarak valid sifre girin
         qualitydemyPage.passwordKutusu.sendKeys("31488081");
         // 5- Login butonuna basarak login olun
+        qualitydemyPage.Cookies.click();
+        ReusableMethods.bekle(1);
         qualitydemyPage.loginButonu.click();
         // 6- Basarili olarak giris yapilabildigini test edin
         Assert.assertTrue(qualitydemyPage.basariliGirisCoursesLinki.isDisplayed());

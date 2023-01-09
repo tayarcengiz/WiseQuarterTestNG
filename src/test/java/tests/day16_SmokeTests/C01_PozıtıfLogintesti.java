@@ -20,18 +20,19 @@ public class C01_PozıtıfLogintesti {
         qualitydemyPage.ilkLoginLinki.click();
         qualitydemyPage.kullaniciEmailKutusu.sendKeys(ConfigReader.getProperty("qdGecerliUsername"));
         qualitydemyPage.passwordKutusu.sendKeys(ConfigReader.getProperty("qdGecerliPassword"));
-       // WebElement Werbung= Driver.getDriver() ;
-        ReusableMethods.bekle(5);
+        if (qualitydemyPage.Cookies.isDisplayed()) {
+            qualitydemyPage.Cookies.click();
+        }
+        ReusableMethods.bekle(1);
         qualitydemyPage.Cookies.click();
-        ReusableMethods.bekle(5);
+        ReusableMethods.bekle(1);
         qualitydemyPage.loginButonu.click();
 
         Assert.assertTrue(qualitydemyPage.basariliGirisCoursesLinki.isDisplayed());
-        ReusableMethods.bekle(5);
+        ReusableMethods.bekle(1);
         Driver.closeDriver();
         
-        ReusableMethods.bekle(10);
-        Driver.closeDriver();
+
 
 
     }

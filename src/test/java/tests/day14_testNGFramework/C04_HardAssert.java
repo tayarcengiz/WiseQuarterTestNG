@@ -1,9 +1,9 @@
-package tests.Day14;
+package tests.day14_testNGFramework;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class C04 {
+public class C04_HardAssert {
 /*
         TestNG'de iki tane Assert class'i vardir
         1.si JUnit'deki Assert class'i ile ayni method'lara sahiptir.

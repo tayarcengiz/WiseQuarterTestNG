@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import utilities.Driver;
 
-public class C01_softassert {
+public class C01_SoftAssert {
     //amazon anasayfaya gidin
     // amazon anasayfaya gittiğini doğrulayın
     // Nutella aratın

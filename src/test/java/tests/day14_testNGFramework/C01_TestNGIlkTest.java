@@ -1,8 +1,8 @@
-package tests.Day14;
+package tests.day14_testNGFramework;
 
 import org.testng.annotations.Test;
 
-public class C01 {
+public class  C01_TestNGIlkTest {
 
      /*
         TestNG test method'larini isim sirasina gore calistirir

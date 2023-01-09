@@ -1,4 +1,4 @@
-package tests.Day14;
+package tests.day14_testNGFramework;
 
 import Pages.AmazonPage;
 import org.openqa.selenium.By;
@@ -8,9 +8,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import utilities.Driver;
 
-import java.lang.annotation.Target;
-
-public class C03 {
+public class  C03_NutellaTesti {
     @Test
             public void test01() {
 
@@ -19,7 +17,7 @@ public class C03 {
         Driver.getDriver().get("https://www.amazon.com");
         // nutella icin arama yapin
         WebElement aramaKutusu = Driver.getDriver().findElement(By.id("twotabsearchtextbox"));
-        aramaKutusu.sendKeys("Nutella" + Keys.ENTER);
+      //  aramaKutusu.sendKeys("Nutella" + Keys.ENTER);
         //WebElement aramaKutusu= Driver.getDriver().findElement(By.id("twotabsearchtextbox"));
         AmazonPage amazonPage = new AmazonPage();
 
@@ -34,6 +32,7 @@ public class C03 {
        //bak buna sonra String actualAramaSonucu = amazonPage.aramaSonucuElementi.getText();
 
         Assert.assertTrue(actualAramaSonucu.contains(expectedKelime));
+
     }
 
 }

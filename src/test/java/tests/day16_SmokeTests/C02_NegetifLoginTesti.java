@@ -9,7 +9,7 @@ import utilities.ReusableMethods;
 
 public class C02_NegetifLoginTesti {
 
-    // @test method'u olusturun
+    // 3 test method'u olusturun
     // 1.de yanlis email, dogru sifre
     // 2.de dogru email yanlis sifre
     // 3.de yanlis email, yanlis sifre ile giris yapmayi deneyin
@@ -21,14 +21,20 @@ public class C02_NegetifLoginTesti {
     public void yanlisEmailTesti(){
 
         Driver.getDriver().get(ConfigReader.getProperty("qdUrl"));
+        ReusableMethods.bekle(1);
         qualitydemyPage.ilkLoginLinki.click();
+        qualitydemyPage.Cookies.click();
+        ReusableMethods.bekle(1);
         qualitydemyPage.kullaniciEmailKutusu.sendKeys(ConfigReader.getProperty("qdGecersizUsername"));
+        qualitydemyPage.Cookies.click();
+
         qualitydemyPage.passwordKutusu.sendKeys(ConfigReader.getProperty("qdGecerliPassword"));
+        ReusableMethods.bekle(1);
         qualitydemyPage.loginButonu.click();
 
-        Assert.assertTrue(qualitydemyPage.kullaniciEmailKutusu.isDisplayed());
+        Assert.assertTrue(qualitydemyPage.Loginkutusu.isDisplayed());
 
-        ReusableMethods.bekle(3);
+        ReusableMethods.bekle(1);
         Driver.closeDriver();
     }
 
@@ -38,12 +44,14 @@ public class C02_NegetifLoginTesti {
         Driver.getDriver().get(ConfigReader.getProperty("qdUrl"));
         qualitydemyPage.ilkLoginLinki.click();
         qualitydemyPage.kullaniciEmailKutusu.sendKeys(ConfigReader.getProperty("qdGecerliUsername"));
+
         qualitydemyPage.passwordKutusu.sendKeys(ConfigReader.getProperty("qdGecersizPassword"));
+        qualitydemyPage.Cookies.click();ReusableMethods.bekle(1);
         qualitydemyPage.loginButonu.click();
 
-        Assert.assertTrue(qualitydemyPage.kullaniciEmailKutusu.isDisplayed());
+        Assert.assertTrue(qualitydemyPage.Loginkutusu.isDisplayed());
 
-        ReusableMethods.bekle(3);
+        ReusableMethods.bekle(1);
         Driver.closeDriver();
 
     }
@@ -55,16 +63,26 @@ public class C02_NegetifLoginTesti {
         qualitydemyPage= new QualitydemyPage();
         Driver.getDriver().get(ConfigReader.getProperty("qdUrl"));
         qualitydemyPage.ilkLoginLinki.click();
-        ReusableMethods.bekle(1); qualitydemyPage.Cookies.click();
+        qualitydemyPage.Cookies.click();
+        ReusableMethods.bekle(1);
         qualitydemyPage.kullaniciEmailKutusu.sendKeys(ConfigReader.getProperty("qdGecersizUsername"));
         qualitydemyPage.passwordKutusu.sendKeys(ConfigReader.getProperty("qdGecersizPassword"));
-        ReusableMethods.bekle(3);
-        qualitydemyPage.Cookies.click();
+        if (qualitydemyPage.Cookies.isDisplayed()) {
+            qualitydemyPage.Cookies.click();
+        }
+        ReusableMethods.bekle(1);
         qualitydemyPage.loginButonu.click();
+        if (qualitydemyPage.Cookies.isDisplayed()) {
+            qualitydemyPage.Cookies.click();
+        }
+        ReusableMethods.bekle(1);
+        Assert.assertTrue(qualitydemyPage.Loginkutusu.isDisplayed());
 
-        Assert.assertTrue(qualitydemyPage.kullaniciEmailKutusu.isDisplayed());
-
-        ReusableMethods.bekle(3);
+        ReusableMethods.bekle(1);
         Driver.closeDriver();
+
     }
+
+
+
 }

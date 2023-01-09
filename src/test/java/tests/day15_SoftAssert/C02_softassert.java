@@ -62,8 +62,7 @@ public class C02_softassert {
     // "Thailand (baht)"
 
     List<WebElement> optionsElementListesi= select.getOptions();
-    List<String> actualOptionsListesiStr= new
-            ArrayList<>();
+    List<String> actualOptionsListesiStr= new  ArrayList<>();
 
     for (WebElement each: optionsElementListesi
     ) {
